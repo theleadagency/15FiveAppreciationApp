@@ -5,14 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AppreciationApp.Models;
+using AppreciationApp.ViewModels;
 
 namespace AppreciationApp.Controllers
 {
-    public class HomeController : Controller
+    public class AppreciationController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            var AppreciationViewModel = new AppreciationViewModel()
+            {
+                Message = "Alan How, Keep it the good work on this appreciation app!",
+                Username = "Joshua Duxbury"
+            };
+
+            return View(AppreciationViewModel);
         }
 
         public IActionResult Privacy()

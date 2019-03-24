@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AppreciationApp.Models
+{
+    public class HighFives
+    {
+        /// <summary>
+        /// The user who give the High Five
+        /// </summary>
+        /// <value>
+        /// The appreciator.
+        /// </value>
+        public string  AppreciatorUser { get; set; }
+        /// <summary>
+        /// Gets or sets the appreciated user.
+        /// </summary>
+        /// <value>
+        /// The appreciated user.
+        /// </value>
+        public string AppreciatedUser { get; set; }
+
+    }
+}
