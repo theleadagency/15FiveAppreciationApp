@@ -5,18 +5,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AppreciationApp.Models;
+using AppreciationApp.Repository;
 using AppreciationApp.ViewModels;
 
 namespace AppreciationApp.Controllers
 {
     public class AppreciationController : Controller
     {
+        private readonly IFifteenFiveAppreciationRepository repo;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppreciationController"/> class.
+        /// </summary>
+        public AppreciationController(IFifteenFiveAppreciationRepository repo)
+        {
+            this.repo = repo;
+        }
+
         public IActionResult Index()
         {
+          
+            var highfives = repo.GetWeeklyHighFives();
             var AppreciationViewModel = new AppreciationViewModel()
             {
-                Message = "Alan How, Keep it the good work on this appreciation app!",
-                Username = "Joshua Duxbury"
+                Message = highfives.Last().Message,
+                Username = highfives.Last().AppreciatorUser
             };
 
             return View(AppreciationViewModel);

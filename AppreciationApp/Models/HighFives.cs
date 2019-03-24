@@ -22,5 +22,13 @@ namespace AppreciationApp.Models
         /// </value>
         public string AppreciatedUser { get; set; }
 
+        /// <summary>
+        /// Gets or sets the message.
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
+        public string Message { get; set; }
+
     }
 }
