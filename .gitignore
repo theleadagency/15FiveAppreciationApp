@@ -78,3 +78,13 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+
+######################
+# vuejs stuff        #
+######################
+db.json
+node_modules/
+public/
+.deploy*/
+src/_drafts
+package-lock.json
