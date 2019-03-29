@@ -1,13 +1,32 @@
-﻿@{
+﻿@using System.Security.Cryptography.X509Certificates
+@{
     ViewData["Title"] = "Appreciation Page";
 }
-
-@Model AppreciationViewModel
-
-
+@model List<AppreciationApp.ViewModels.AppreciationViewModel>
 
 <div class="text-center">
-    <h1 class="display-4">Appreciation</h1>
-    <p>@Model.Username</p>
-    <p>@Model.Message</p>
+    @{
+        int indexCount = 0;
+
+        foreach (var highfive in Model)
+        {
+            indexCount += 1;
+            <h1 class="display-4" id="highFive-@indexCount" style="display: none">@highfive.Message</h1>
+        }
+    }
+    <button onclick="myFunction()">Next</button>
+    
+    <script>
+        var indexCount = 0;
+        function myFunction() {
+            indexCount++;
+            var x = document.getElementById("highFive-" + indexCount);
+            x.style.display = "block";
+
+            if (indexCount > 1) {
+                var y = document.getElementById("highFive-" + (indexCount -1));
+                y.style.display = "none";
+            }
+        }
+    </script>
 </div>

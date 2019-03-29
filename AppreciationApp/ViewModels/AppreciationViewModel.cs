@@ -8,6 +8,13 @@ namespace AppreciationApp.ViewModels
     public class AppreciationViewModel
     {
         /// <summary>
+        /// Gets or sets the index.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
+        public int Index { get; set; }
+        /// <summary>
         /// Gets or sets the appreciation message.
         /// </summary>
         /// <value>
