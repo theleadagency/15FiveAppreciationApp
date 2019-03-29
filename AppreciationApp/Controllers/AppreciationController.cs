@@ -26,18 +26,21 @@ namespace AppreciationApp.Controllers
         {
           
             var highfives = repo.GetWeeklyHighFives();
-            var AppreciationViewModel = new AppreciationViewModel()
+            var AppreciationViewModel = new List<AppreciationViewModel>();
+            int indexCount = 0;
+            foreach (var item in highfives)
             {
-                Message = highfives.Last().Message,
-                Username = highfives.Last().AppreciatorUser
-            };
+                indexCount += 1;
+                AppreciationViewModel.Add(new AppreciationViewModel()
+                {
+                    Index = indexCount,
+                    Message = item.Message,
+                    Username = item.AppreciatorUser
+                });
+            }
+       
 
             return View(AppreciationViewModel);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
