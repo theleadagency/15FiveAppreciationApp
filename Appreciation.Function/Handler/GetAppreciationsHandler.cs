@@ -29,12 +29,33 @@ namespace AppreciationApp.Function.Handler
                         new Person()
                         {
                             Name = "Joe Bloggs",
-                            NumberOfAppreciationsGivenTotal = 5,
-                            NumberOfAppreciationsReceivedTotal = 3
+                            NumberOfAppreciationsGivenTotal = 7,
+                            NumberOfAppreciationsReceivedTotal = 2
                         }
                     },
                     Message = "@JohnSmith Thanks for being an imaginary person",
                     Submitted = DateTime.Now.AddHours(-4)
+                },
+                new Appreciation()
+                {
+                    NameOfSubmitter = new Person()
+                    {
+                        Name = "Joe Bloggs",
+                        NumberOfAppreciationsGivenTotal = 7,
+                        NumberOfAppreciationsReceivedTotal = 2
+                    },
+
+                    AppreciatedPeople = new List<Person>()
+                    {
+                        new Person()
+                        {
+                            Name = "John Smith",
+                            NumberOfAppreciationsGivenTotal = 5,
+                            NumberOfAppreciationsReceivedTotal = 3
+                        }
+                    },
+                    Message = "@Joe Bloggs Thanks for also being an imaginary person",
+                    Submitted = DateTime.Now.AddHours(-3)
                 }
             });
         }
