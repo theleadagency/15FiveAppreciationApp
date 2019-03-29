@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Appreciation.Core.Models
+﻿namespace AppreciationApp.Core.Models
 {
     public class Person
     {

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using AppreciationApp.Models;
-using Microsoft.IdentityModel.Tokens;
+using AppreciationApp.Web.Models;
 using Newtonsoft.Json;
 
-namespace AppreciationApp.Repository
+namespace AppreciationApp.Web.Repository
 {
     public class FifteenFiveAppreciationRepository : IFifteenFiveAppreciationRepository
     {

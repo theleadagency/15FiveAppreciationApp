@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Appreciation.Core.Models
+namespace AppreciationApp.Core.Models
 {
     public class Appreciation
     {

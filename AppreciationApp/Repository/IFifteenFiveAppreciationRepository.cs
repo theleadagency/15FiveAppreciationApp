@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AppreciationApp.Models;
+using AppreciationApp.Web.Models;
 
-namespace AppreciationApp.Repository
+namespace AppreciationApp.Web.Repository
 {
     public interface IFifteenFiveAppreciationRepository
     {

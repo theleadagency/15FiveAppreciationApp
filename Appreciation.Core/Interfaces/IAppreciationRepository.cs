@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Appreciation.Core.Interfaces
+namespace AppreciationApp.Core.Interfaces
 {
     public interface IAppreciationRepository
     {
