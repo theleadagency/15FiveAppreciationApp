@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using AppreciationApp.Web.Models;
+using AppreciationApp.Web.Repository;
+using AppreciationApp.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using AppreciationApp.Models;
-using AppreciationApp.Repository;
-using AppreciationApp.ViewModels;
 
-namespace AppreciationApp.Controllers
+namespace AppreciationApp.Web.Controllers
 {
     public class AppreciationController : Controller
     {
