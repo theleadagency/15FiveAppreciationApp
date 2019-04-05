@@ -11,11 +11,11 @@
         foreach (var highfive in Model)
         {
             indexCount += 1;
-            <h1 class="display-4" id="highFive-@indexCount" style="display: none">@highfive.Message</h1>
+            <h1 class="display-4" id="highFive-@indexCount" style="display: none">@highfive.Username <br /> @highfive.Message</h1>
         }
     }
     <button onclick="myFunction()">Next</button>
-    
+
     <script>
         var indexCount = 0;
         function myFunction() {
@@ -24,7 +24,7 @@
             x.style.display = "block";
 
             if (indexCount > 1) {
-                var y = document.getElementById("highFive-" + (indexCount -1));
+                var y = document.getElementById("highFive-" + (indexCount - 1));
                 y.style.display = "none";
             }
         }

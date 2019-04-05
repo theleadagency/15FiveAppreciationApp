@@ -32,7 +32,7 @@ namespace AppreciationApp.Web.Controllers
                 {
                     Index = indexCount,
                     Message = item.Message,
-                    Username = item.AppreciatorUser
+                    Username = item.AppreciatedUser
                 });
             }
        
