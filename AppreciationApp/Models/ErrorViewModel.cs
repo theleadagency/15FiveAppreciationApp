@@ -1,6 +1,4 @@
-using System;
-
-namespace AppreciationApp.Models
+namespace AppreciationApp.Web.Models
 {
     public class ErrorViewModel
     {

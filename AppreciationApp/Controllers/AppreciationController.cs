@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using AppreciationApp.Web.Models;
+using AppreciationApp.Web.Repository;
+using AppreciationApp.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using AppreciationApp.Models;
-using AppreciationApp.Repository;
-using AppreciationApp.ViewModels;
 
-namespace AppreciationApp.Controllers
+namespace AppreciationApp.Web.Controllers
 {
     public class AppreciationController : Controller
     {
@@ -26,18 +23,21 @@ namespace AppreciationApp.Controllers
         {
           
             var highfives = repo.GetWeeklyHighFives();
-            var AppreciationViewModel = new AppreciationViewModel()
+            var AppreciationViewModel = new List<AppreciationViewModel>();
+            int indexCount = 0;
+            foreach (var item in highfives)
             {
-                Message = highfives.Last().Message,
-                Username = highfives.Last().AppreciatorUser
-            };
+                indexCount += 1;
+                AppreciationViewModel.Add(new AppreciationViewModel()
+                {
+                    Index = indexCount,
+                    Message = item.Message,
+                    Username = item.AppreciatedUser
+                });
+            }
+       
 
             return View(AppreciationViewModel);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace AppreciationApp.ViewModels
+﻿namespace AppreciationApp.Web.ViewModels
 {
     public class AppreciationViewModel
     {
+        /// <summary>
+        /// Gets or sets the index.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
+        public int Index { get; set; }
         /// <summary>
         /// Gets or sets the appreciation message.
         /// </summary>

@@ -2,8 +2,10 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg='msg'/>
+    <p v-if="appreciations != null">{{appreciations}}</p>
     <button v-on:click="$adal.login()" >Sign In</button>
     <button v-on:click="$adal.logout()" >Sign Out</button>
+    <button v-if="$adal.isAuthenticated()" v-on:click="getAppreciations()" >Get Appreciations</button>
     <div v-if="$adal.checkRoles(['Admin'])">You're also an admin</div>
     <div v-if="$adal.isAuthenticated()">You are signed in!</div>
     <div v-if="!$adal.checkRoles(['Admin'])">You're not an admin</div>
@@ -13,6 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Axios from 'axios';
 
 @Component({
   components: {
@@ -21,6 +24,7 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
   data () {
     return {
       msg: "Signing in...",
+      appreciations: null
     }
   },
   async created () {
@@ -44,6 +48,10 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
       console.log(res)
       return res.data
     },
+    async getAppreciations (){
+      Axios.get("http://localhost:7071/api/Appreciations?daysToLookBack=7")
+      .then(Response => (this.$data.appreciations = Response))
+    }
   }
 })
 export default class Home extends Vue {}
